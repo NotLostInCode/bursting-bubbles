@@ -1,0 +1,50 @@
+.app {
+   
+}
+
+.bubble {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.containerBubble {
+    max-width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    
+ 
+}
+.round {
+    width: 300px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
+}
+.burstingBubbles {
+    position: relative;
+  width: 100%;
+    border: 3px solid #fff;
+    height: 750px;
+    border-radius: 10px;
+}
+.panel div {
+    background-color: #fff;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+}
+.panel {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.repeat {
+    cursor: pointer;
+}

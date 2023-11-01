@@ -12,12 +12,10 @@
 .containerBubble {
     max-width: 1000px;
     margin: 20px auto;
+}
+.menuBubble {
     display: flex;
-    gap: 20px;
-    flex-direction: column;
-    align-items: center;
-    
- 
+    justify-content: space-between;
 }
 .round {
     width: 300px;

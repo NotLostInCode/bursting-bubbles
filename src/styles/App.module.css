@@ -46,3 +46,16 @@
 .repeat {
     cursor: pointer;
 }
+
+.playGame {
+    background-color: rgba(38, 31, 71, 0.5);
+    height: 100%;
+}
+/*background-color: rgba(38, 31, 71, 0.5);*/
+.start {
+    background-color: #e03854;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 50;
+}

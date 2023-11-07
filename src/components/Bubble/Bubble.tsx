@@ -1,11 +1,16 @@
 import React, {useState} from 'react';
 import styles from './Bubble.module.css'
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "../../state/store/store";
 
 type PropsType = {
     gettingCounter: () => void
 }
 
 export const Bubble: React.FC<PropsType> = ({gettingCounter}) => {
+
+    let bubble = useSelector<AppRootStateType, any>(state => state.bubble)
+    const dispatch = useDispatch()
 
     const getRandomPosition = (maxWidth: number, maxHeight: number) => {
         const x = Math.random() * (maxWidth - 50)

@@ -1,23 +1,24 @@
 import React, {useEffect, useState} from 'react';
 import styles from './Timer.module.css'
-
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "../../state/store/store";
+import {decrementLifeAC} from "../../state/reducers/bubble-reducer";
 
 
 export type PropsType = {
     startTimer: boolean
-    life: number
-    setLife: (life: number) => void
-    count: number
 }
-export const Timer: React.FC<PropsType> = ({startTimer, life, setLife, count}) => {
-
+export const Timer: React.FC<PropsType> = ({startTimer}) => {
     const [seconds, setSeconds] = useState(20)
     const [milliseconds, setMilliseconds] = useState(0);
 
-    const lifes = () => {
-        if (count < 10) {
-            setLife(life - 1)
+    let bubble = useSelector<AppRootStateType, any>(state => state.bubble)
+    const dispatch = useDispatch()
 
+
+    const decrementLife = () => {
+        if (bubble.count < 10) {
+            dispatch(decrementLifeAC(bubble.life))
         }
     }
 
@@ -30,7 +31,7 @@ export const Timer: React.FC<PropsType> = ({startTimer, life, setLife, count}) =
             timer = setInterval(() => {
                 if (seconds === 0 && milliseconds === 0) {
                     clearInterval(timer);
-                    lifes()
+                    decrementLife()
                 } else if (milliseconds === 0) {
                     if (seconds > 0) {
                         setSeconds(seconds => seconds - 1)
@@ -41,7 +42,7 @@ export const Timer: React.FC<PropsType> = ({startTimer, life, setLife, count}) =
                 }
             }, 100);
         }
-        if (count >= 10){
+        if (bubble.count >= 10) {
             clearInterval(timer);
         }
 

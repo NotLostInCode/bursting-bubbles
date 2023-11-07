@@ -17,9 +17,6 @@ export const App = () => {
     const [background, setBackground] = useState(true)
     const [startTimer, setStartTimer] = useState(false)
 
-    const [life, setLife] = useState(5)
-
-
 
     const onClickStartHandler = () => {
         setStart(true)
@@ -29,6 +26,19 @@ export const App = () => {
     const gettingCounter = () => {
         dispatch(countIncrementAC(bubble.count))
     }
+
+
+    const playGame = () => {
+        if (start) {
+            return <div className={styles.start}>{countdown}</div>
+        } else {
+            return <button onClick={onClickStartHandler} className={styles.start}>
+                {bubble.play}
+            </button>
+        }
+    }
+
+
 
     useEffect(() => {
         let countdownInterval: any;
@@ -55,30 +65,24 @@ export const App = () => {
     }, [start, countdown]);
 
 
-
     return (
         <div className={styles.app}>
 
             <div className={styles.containerBubble}>
 
                 <div className={styles.menuBubble}>
-                    <div className={styles.lifes}>lifes {life}</div>
+                    <div className={styles.lifes}>lifes {bubble.life}</div>
                     <div className={styles.timer}>
-                        <Timer startTimer={startTimer}
-                               life={life}
-                               setLife={setLife}
-                               count={bubble.count}/>
+                        <Timer startTimer={startTimer}/>
                     </div>
                     <div className={styles.count}>Count {bubble.count}</div>
                 </div>
 
                 <div className={styles.burstingBubbles}>
                     <div className={background ? styles.playGame : ''}>
-                        <button onClick={onClickStartHandler} className={styles.start}>
-                            {start ? countdown : bubble.play}
-                        </button>
+                        {playGame()}
                     </div>
-                    <Bubble gettingCounter={gettingCounter} />
+                    <Bubble gettingCounter={gettingCounter}/>
                 </div>
             </div>
 
@@ -87,7 +91,7 @@ export const App = () => {
 }
 
 
-
+// if ((count + 1) % 10 === 0)
 
 
 

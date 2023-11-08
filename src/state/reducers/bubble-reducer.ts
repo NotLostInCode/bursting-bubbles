@@ -1,11 +1,16 @@
 export type CountIncrementActionType = ReturnType<typeof countIncrementAC>
 export type PlayActionType = ReturnType<typeof playAC>
 export type DecrementLifeActionType = ReturnType<typeof decrementLifeAC>
-export type NextRoundActionType = ReturnType<typeof nextRoundAC>
+export type NextRoundActionType = ReturnType<typeof roundAC>
 export type RandomBubblePositionActionType = ReturnType<typeof randomBubblePositionAC>
+export type StartTimerActionType = ReturnType<typeof startTimerAC>
+export type CountdownActionType = ReturnType<typeof countdownAC>
+export type StartActionType = ReturnType<typeof startAC>
+export type BackgroundActionType = ReturnType<typeof backgroundAC>
+export type TextActionType = ReturnType<typeof textAC>
 
 
-type ActionType = CountIncrementActionType | PlayActionType | DecrementLifeActionType | NextRoundActionType | RandomBubblePositionActionType
+type ActionType = CountIncrementActionType | PlayActionType | DecrementLifeActionType | NextRoundActionType | RandomBubblePositionActionType | StartTimerActionType | CountdownActionType | StartActionType | BackgroundActionType | TextActionType
 
 const initialState = {
     count: 0,
@@ -13,6 +18,12 @@ const initialState = {
     life: 5,
     horizontally: 0,
     vertically: 0,
+    countdown: 3,
+    startTimer: false,
+    start: false,
+    background: true,
+    text: '',
+    round: 1,
 }
 
 export const bubbleReducer = (state = initialState, action: ActionType) => {
@@ -23,8 +34,24 @@ export const bubbleReducer = (state = initialState, action: ActionType) => {
             const vertically = Math.random() * (action.maxHeight - 50)
             return {...state, horizontally, vertically}
         }
+        case 'START_TIMER': {
+            return {...state, startTimer: action.timer}
+        }
+
+        case 'START': {
+            return {...state, start: action.start}
+        }
+
+        case 'BACKGROUND' : {
+            return {...state, background: action.background}
+        }
+
+        case 'COUNTDOWN': {
+            return {...state, countdown: action.countdown - 1}
+        }
 
         case 'COUNT_INCREMENT': {
+
             return {...state, count: action.count + 1}
         }
         case 'PLAY': {
@@ -35,8 +62,13 @@ export const bubbleReducer = (state = initialState, action: ActionType) => {
             return {...state, life: action.life - 1}
         }
 
-        case 'NEXT_ROUND': {
-            return
+        case 'TEXT': {
+            // @ts-ignore
+            return {...state, text: action.count >= 10 ? action.text + action.round : action.text}
+        }
+
+        case 'ROUND': {
+            return {...state, round:  action.round + 1}
         }
 
         default:
@@ -48,6 +80,24 @@ export const randomBubblePositionAC = (maxWidth: number, maxHeight: number) => {
     return {type: 'RANDOM_BUBBLE_POSITION', maxWidth, maxHeight } as const
 }
 
+export const textAC = (text: string, round?: number, count?: number) => {
+    return {type: 'TEXT', text, round, count} as const
+}
+
+export const startTimerAC = (timer: boolean) => {
+    return {type: 'START_TIMER', timer} as const
+}
+export const countdownAC = (countdown: number) => {
+    return {type: 'COUNTDOWN', countdown} as const
+}
+export const backgroundAC = (background: boolean) => {
+    return {type: 'BACKGROUND', background} as const
+}
+
+export const startAC = (start: boolean) => {
+    return {type: 'START', start} as const
+}
+
 export const countIncrementAC = (count: number) => {
     return {type: 'COUNT_INCREMENT', count} as const
 }
@@ -57,6 +107,6 @@ export const playAC = (play: string) => {
 export const decrementLifeAC = (life: number) => {
     return {type: 'DECREMENT_LIFE', life} as const
 }
-export const nextRoundAC = (round: number) => {
-    return {type: 'NEXT_ROUND', round} as const
+export const roundAC = (round: number) => {
+    return {type: 'ROUND', round} as const
 }

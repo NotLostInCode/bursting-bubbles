@@ -1,7 +1,13 @@
-.bubble {
+.showBubble {
+    position: absolute;
     width: 100px;
     height: 100px;
     background-color: black;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.hiddenBubble {
+    width: 0;
+    height: 0;
 }

@@ -2,7 +2,7 @@ export type CountIncrementActionType = ReturnType<typeof countIncrementAC>
 export type PlayActionType = ReturnType<typeof playAC>
 export type DecrementLifeActionType = ReturnType<typeof decrementLifeAC>
 export type NextRoundActionType = ReturnType<typeof nextRoundAC>
-export type RandomBubblePositionActionType = ReturnType<typeof randomBubblePosition>
+export type RandomBubblePositionActionType = ReturnType<typeof randomBubblePositionAC>
 
 
 type ActionType = CountIncrementActionType | PlayActionType | DecrementLifeActionType | NextRoundActionType | RandomBubblePositionActionType
@@ -11,12 +11,17 @@ const initialState = {
     count: 0,
     play: 'Start',
     life: 5,
+    horizontally: 0,
+    vertically: 0,
 }
 
 export const bubbleReducer = (state = initialState, action: ActionType) => {
+
     switch (action.type) {
         case 'RANDOM_BUBBLE_POSITION': {
-            return
+            const horizontally = Math.random() * (action.maxWidth- 50)
+            const vertically = Math.random() * (action.maxHeight - 50)
+            return {...state, horizontally, vertically}
         }
 
         case 'COUNT_INCREMENT': {
@@ -39,8 +44,8 @@ export const bubbleReducer = (state = initialState, action: ActionType) => {
     }
 }
 
-export const randomBubblePosition = () => {
-    return {type: 'RANDOM_BUBBLE_POSITION', } as const
+export const randomBubblePositionAC = (maxWidth: number, maxHeight: number) => {
+    return {type: 'RANDOM_BUBBLE_POSITION', maxWidth, maxHeight } as const
 }
 
 export const countIncrementAC = (count: number) => {

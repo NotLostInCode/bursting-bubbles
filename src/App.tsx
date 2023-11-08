@@ -22,11 +22,6 @@ export const App = () => {
         setStart(true)
     }
 
-    //Из компоненты bubble вызывается функция и диспатчит count
-    const gettingCounter = () => {
-        dispatch(countIncrementAC(bubble.count))
-    }
-
 
     const playGame = () => {
         if (start) {
@@ -37,8 +32,6 @@ export const App = () => {
             </button>
         }
     }
-
-
 
     useEffect(() => {
         let countdownInterval: any;
@@ -82,7 +75,7 @@ export const App = () => {
                     <div className={background ? styles.playGame : ''}>
                         {playGame()}
                     </div>
-                    <Bubble gettingCounter={gettingCounter}/>
+                    <Bubble/>
                 </div>
             </div>
 

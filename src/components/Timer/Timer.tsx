@@ -19,20 +19,14 @@ export const Timer = () => {
     let bubble = useSelector<AppRootStateType, any>(state => state.bubble)
     const dispatch = useDispatch()
 
-    const [seconds, setSeconds] = useState(15)
+    const [seconds, setSeconds] = useState(5)
     const [milliseconds, setMilliseconds] = useState(0);
 
-
-    const decrementLife = () => {
-        if (bubble.count < 10) {
-            dispatch(decrementLifeAC(bubble.life))
-        }
-    }
 
     const play = () => {
         setSeconds(15);
         setMilliseconds(0);
-        dispatch(countdownAC(3))
+        dispatch(countdownAC(bubble.countdown))
         dispatch(startAC(false))
         dispatch(startTimerAC(false))
         dispatch(backgroundAC(true))
@@ -43,9 +37,9 @@ export const Timer = () => {
 
     const repeat = () => {
         play()
-        decrementLife()
         dispatch(textAC('You lose'))
         dispatch(playAC('Repeat'))
+        dispatch(decrementLifeAC(bubble.life))
     }
 
     const nextRound = () => {
@@ -65,8 +59,6 @@ export const Timer = () => {
                 if (seconds === 0 && milliseconds === 0) {
                     clearInterval(timer);
                     repeat()
-
-
                 } else if (milliseconds === 0) {
                     if (seconds > 0) {
                         setSeconds(seconds => seconds - 1)
@@ -82,10 +74,7 @@ export const Timer = () => {
         if (bubble.count >= 10) {
             clearInterval(timer);
             nextRound()
-
-
         }
-
 
         return () => {
             clearInterval(timer);

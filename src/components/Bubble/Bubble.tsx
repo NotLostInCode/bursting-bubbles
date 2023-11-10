@@ -15,7 +15,6 @@ export const Bubble = () => {
     const onClickRandomBubbleHandler = () => {
         dispatch(countIncrementAC(bubble.count))
         dispatch(randomBubblePositionAC(950, 700))
-
     }
 
     return (

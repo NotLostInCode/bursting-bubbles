@@ -47,7 +47,7 @@ export const bubbleReducer = (state = initialState, action: ActionType) => {
         }
 
         case 'COUNTDOWN': {
-            return {...state, countdown: action.countdown - 1}
+            return {...state, countdown: action.countdown === 0 ? 3 : action.countdown - 1}
         }
 
         case 'COUNT_INCREMENT': {

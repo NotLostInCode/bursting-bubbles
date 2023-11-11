@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./state/store/store";
 import {Bubble} from "./components/Bubble/Bubble";
 import {Timer} from "./components/Timer/Timer";
-import {CountDownAndStart} from "./components/CountDownAndStart/CountDownAndStart";
+import {CountdownAndStart} from "./components/CountDownAndStart/CountdownAndStart";
 
 
 export const App = () => {
@@ -26,7 +26,7 @@ export const App = () => {
 
                 <div className={styles.burstingBubbles}>
                     <div className={bubble.background ? styles.playGame : ''}>
-                       <CountDownAndStart />
+                        <CountdownAndStart/>
                     </div>
                     <Bubble/>
                 </div>

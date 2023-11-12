@@ -15,10 +15,10 @@ export const CountdownAndStart = () => {
     return (
         <>
             <div className={styles.start}>
-                <div>{bubbleText}</div>
+                <div className={styles.bubbleText}>{bubbleText}</div>
                 {bubbleStart
                     ? <div>{bubbleCountdown}</div>
-                    : <button onClick={onClickStartHandler}>
+                    : <button className={styles.btnPlay} onClick={onClickStartHandler}>
                         {bubblePlay}
                     </button>}
             </div>

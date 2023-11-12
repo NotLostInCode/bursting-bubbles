@@ -1,16 +1,21 @@
 .app {
-   
+
 }
 
 
 .containerBubble {
-    max-width: 1000px;
-    margin: 20px auto;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
+
 .menuBubble {
     display: flex;
     justify-content: space-between;
 }
+
 .round {
     width: 300px;
     color: #000;
@@ -19,24 +24,29 @@
     text-align: center;
     padding: 5px;
 }
+
 .burstingBubbles {
     position: relative;
-  width: 100%;
-    border: 3px solid #fff;
-    height: 750px;
-    border-radius: 10px;
-}
-.panel div {
-    background-color: #fff;
-    color: black;
-    padding: 5px;
-    border-radius: 10px;
-}
-.panel {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
+    border: 5px solid #fff;
+    height: 825px;
+    border-radius: 10px;
+    background: linear-gradient(225deg, #BEBBEE, #CBA69B);
 }
+
+.menuBubble div {
+    background-color: #e03854;
+    border: 5px solid #fff;
+    padding: 10px;
+    width: 130px;
+    text-align: center;
+    font-size: 40px;
+    border-radius: 10px;
+}
+
+
+/*style panel*/
+
 .repeat {
     cursor: pointer;
 }
@@ -45,4 +55,5 @@
     background-color: rgba(38, 31, 71, 0.5);
     height: 100%;
 }
+
 /*background-color: rgba(38, 31, 71, 0.5);*/

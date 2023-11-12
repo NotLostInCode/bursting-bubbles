@@ -5,6 +5,8 @@ import {AppRootStateType} from "./state/store/store";
 import {Bubble} from "./components/Bubble/Bubble";
 import {Timer} from "./components/Timer/Timer";
 import {CountdownAndStart} from "./components/CountDownAndStart/CountdownAndStart";
+import Panel from "./components/Panel/Panel";
+import {BrowserRouter} from "react-router-dom";
 
 
 export const App = () => {
@@ -17,19 +19,21 @@ export const App = () => {
             <div className={styles.containerBubble}>
 
                 <div className={styles.menuBubble}>
-                    <div className={styles.lifes}>lifes {bubble.life}</div>
-                    <div className={styles.timer}>
-                        <Timer/>
-                    </div>
-                    <div className={styles.count}>Count {bubble.count}</div>
+                    <div className={styles.lifes}>{bubble.life}</div>
+                    <Timer/>
+                    <div className={styles.count}>{bubble.count}</div>
                 </div>
 
                 <div className={styles.burstingBubbles}>
-                    <div className={bubble.background ? styles.playGame : ''}>
+                    <div>
                         <CountdownAndStart/>
                     </div>
                     <Bubble/>
                 </div>
+
+               <BrowserRouter>
+                   <Panel/>
+               </BrowserRouter>
             </div>
 
         </div>

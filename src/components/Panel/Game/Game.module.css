@@ -1,0 +1,22 @@
+.burstingBubbles {
+    position: relative;
+    width: 100%;
+    border: 5px solid #fff;
+    flex: 1;
+    border-radius: 10px;
+    background: linear-gradient(225deg, #BEBBEE, #CBA69B);
+}
+.menuBubble {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuBubble div {
+    background-color: #e03854;
+    border: 5px solid #fff;
+    padding: 10px;
+    width: 130px;
+    text-align: center;
+    font-size: 40px;
+    border-radius: 10px;
+}

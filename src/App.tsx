@@ -2,38 +2,33 @@ import React from 'react';
 import styles from './styles/App.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./state/store/store";
-import {Bubble} from "./components/Bubble/Bubble";
-import {Timer} from "./components/Timer/Timer";
-import {CountdownAndStart} from "./components/CountDownAndStart/CountdownAndStart";
+import {Bubble} from "./components/Panel/Game/Bubble/Bubble";
+import {Timer} from "./components/Panel/Game/Timer/Timer";
+import {CountdownAndStart} from "./components/Panel/Game/CountDownAndStart/CountdownAndStart";
 import Panel from "./components/Panel/Panel";
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Game} from "./components/Panel/Game/Game";
+import {Profile} from "./components/Panel/Profile/Profile";
+import {GameDescription} from "./components/Panel/GameDescription/GameDescription";
+import {Settings} from "./components/Panel/Settings/Settings";
 
 
 export const App = () => {
-    let bubble = useSelector<AppRootStateType, any>(state => state.bubble)
 
 
     return (
         <div className={styles.app}>
 
             <div className={styles.containerBubble}>
+                <Routes>
+                    <Route path={'/profile'} element={<Profile/>}/>
+                    <Route path={'/game-description'} element={<GameDescription/>}/>
+                    <Route path={'/game'} element={<Game/>}/>
+                    <Route path={'/settings'} element={<Settings/>}/>
+                </Routes>
 
-                <div className={styles.menuBubble}>
-                    <div className={styles.lifes}>{bubble.life}</div>
-                    <Timer/>
-                    <div className={styles.count}>{bubble.count}</div>
-                </div>
+                <Panel/>
 
-                <div className={styles.burstingBubbles}>
-                    <div>
-                        <CountdownAndStart/>
-                    </div>
-                    <Bubble/>
-                </div>
-
-               <BrowserRouter>
-                   <Panel/>
-               </BrowserRouter>
             </div>
 
         </div>

@@ -9,12 +9,9 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    height: 100vh;
 }
 
-.menuBubble {
-    display: flex;
-    justify-content: space-between;
-}
 
 .round {
     width: 300px;
@@ -25,24 +22,9 @@
     padding: 5px;
 }
 
-.burstingBubbles {
-    position: relative;
-    width: 100%;
-    border: 5px solid #fff;
-    height: 825px;
-    border-radius: 10px;
-    background: linear-gradient(225deg, #BEBBEE, #CBA69B);
-}
 
-.menuBubble div {
-    background-color: #e03854;
-    border: 5px solid #fff;
-    padding: 10px;
-    width: 130px;
-    text-align: center;
-    font-size: 40px;
-    border-radius: 10px;
-}
+
+
 
 
 /*style panel*/

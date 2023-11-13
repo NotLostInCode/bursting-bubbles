@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './CountdownAndStart.module.css'
-import {useCountdownAndStart} from "../../hooks/useCountdownAndStart";
+import {useCountdownAndStart} from "../../../../hooks/useCountdownAndStart";
 
 
 export const CountdownAndStart = () => {

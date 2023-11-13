@@ -1,0 +1,35 @@
+.gameDescription {
+    border-radius: 10px;
+    flex: 1;
+    background: linear-gradient(225deg, #BEBBEE, #CBA69B);
+    border: 5px solid #fff;
+    width: 800px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.gameDescriptionHead {
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.victory {
+
+}
+.losing {
+
+}
+.selectedText {
+    color: #e03854;
+}
+.goodLuck {
+    font-size: 40px;
+    color: #e03854;
+}
+.enjoyGame {
+    text-align: center;
+}

@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/bursting-bubbles/static/css/main.c1419a31.css",
-    "main.js": "/bursting-bubbles/static/js/main.d090dc0f.js",
-    "static/js/787.e9bac911.chunk.js": "/bursting-bubbles/static/js/787.e9bac911.chunk.js",
-    "static/media/avatar.png": "/bursting-bubbles/static/media/avatar.6836402957ae5f3d98fb.png",
-    "static/media/Fredoka-VariableFont_wdth,wght.ttf": "/bursting-bubbles/static/media/Fredoka-VariableFont_wdth,wght.1cfa1639746e014c46fc.ttf",
-    "static/media/LuckiestGuy-Regular.ttf": "/bursting-bubbles/static/media/LuckiestGuy-Regular.fd5a8f5e455b026973fc.ttf",
-    "static/media/profile.svg": "/bursting-bubbles/static/media/profile.cc79d69906e06d07c066b80dafa0d2dc.svg",
-    "static/media/settings.svg": "/bursting-bubbles/static/media/settings.66e9fc2ce7055c68fb8bc6813e48ef1f.svg",
-    "static/media/list.svg": "/bursting-bubbles/static/media/list.52f92a153a7376e90c32e0541a23268a.svg",
-    "static/media/game.svg": "/bursting-bubbles/static/media/game.82ffab8a3890f239bf8fad8aebc99d3a.svg",
-    "index.html": "/bursting-bubbles/index.html",
-    "main.c1419a31.css.map": "/bursting-bubbles/static/css/main.c1419a31.css.map",
-    "main.d090dc0f.js.map": "/bursting-bubbles/static/js/main.d090dc0f.js.map",
-    "787.e9bac911.chunk.js.map": "/bursting-bubbles/static/js/787.e9bac911.chunk.js.map"
+    "main.css": "/static/css/main.92de09f8.css",
+    "main.js": "/static/js/main.b303cf81.js",
+    "static/js/787.e9bac911.chunk.js": "/static/js/787.e9bac911.chunk.js",
+    "static/media/avatar.png": "/static/media/avatar.6836402957ae5f3d98fb.png",
+    "static/media/Fredoka-VariableFont_wdth,wght.ttf": "/static/media/Fredoka-VariableFont_wdth,wght.1cfa1639746e014c46fc.ttf",
+    "static/media/LuckiestGuy-Regular.ttf": "/static/media/LuckiestGuy-Regular.fd5a8f5e455b026973fc.ttf",
+    "static/media/profile.svg": "/static/media/profile.cc79d69906e06d07c066b80dafa0d2dc.svg",
+    "static/media/settings.svg": "/static/media/settings.66e9fc2ce7055c68fb8bc6813e48ef1f.svg",
+    "static/media/list.svg": "/static/media/list.52f92a153a7376e90c32e0541a23268a.svg",
+    "static/media/game.svg": "/static/media/game.82ffab8a3890f239bf8fad8aebc99d3a.svg",
+    "index.html": "/index.html",
+    "main.92de09f8.css.map": "/static/css/main.92de09f8.css.map",
+    "main.b303cf81.js.map": "/static/js/main.b303cf81.js.map",
+    "787.e9bac911.chunk.js.map": "/static/js/787.e9bac911.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1419a31.css",
-    "static/js/main.d090dc0f.js"
+    "static/css/main.92de09f8.css",
+    "static/js/main.b303cf81.js"
   ]
 }

@@ -26,12 +26,15 @@ export const App = () => {
         <div className={styles.app}>
 
             <div className={styles.containerBubble}>
-                <Routes>
-                    <Route path={'/profile'} element={<Profile/>}/>
-                    <Route path={'/game-description'} element={<GameDescription/>}/>
-                    <Route path={'/game'} element={<Game/>}/>
-                    <Route path={'/settings'} element={<Settings/>}/>
-                </Routes>
+
+                    <Routes>
+                        <Route path={'/profile'} element={<Profile/>}/>
+                        <Route path={'/game-description'} element={<GameDescription/>}/>
+                        <Route path={'/game'} element={<Game/>}/>
+                        <Route path={'/settings'} element={<Settings/>}/>
+                    </Routes>
+
+
 
                 <Panel/>
 

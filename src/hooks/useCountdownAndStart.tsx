@@ -14,7 +14,7 @@ export const useCountdownAndStart = () => {
         if (bubble.start) {
             countdownInterval = setInterval(() => {
                 dispatch(countdownAC(bubble.countdown))
-            }, 1500)
+            }, 1000)
         }
         if (bubble.countdown === 0) {
             clearInterval(countdownInterval)

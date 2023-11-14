@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {backgroundAC, countdownAC, playAC, startAC, startTimerAC, textAC} from "../state/reducers/bubble-reducer";
+import {countdownAC, playAC, startAC, startTimerAC, textAC} from "../state/reducers/bubble-reducer";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../state/store/store";
 
@@ -22,7 +22,6 @@ export const useCountdownAndStart = () => {
                 dispatch(startTimerAC(true))
                 dispatch(playAC(''))
                 dispatch(startAC(false))
-                dispatch(backgroundAC(false))
 
             }, 1500)
         }
@@ -44,5 +43,6 @@ export const useCountdownAndStart = () => {
         bubbleCountdown: bubble.countdown,
         onClickStartHandler,
         bubblePlay: bubble.play,
+        bubbleStartTimer: bubble.startTimer
     };
 };

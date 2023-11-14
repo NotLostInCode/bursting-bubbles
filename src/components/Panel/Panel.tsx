@@ -23,7 +23,9 @@ export const Panel = () => {
             <NavLink to={'/game'} className={styles.panelLink}>
                 <img className={styles.panelImg} src={game} alt=""/>
             </NavLink>
-            <NavLink to={'/settings'} className={styles.panelLink}>
+
+            {/*Временная заглушка, т.к страница ещё не реализована*/}
+            <NavLink to={'/settings'} onClick={(e) => e.preventDefault()} className={styles.panelLink}>
                 <img className={styles.panelImg} src={settings} alt=""/>
             </NavLink>
         </div>

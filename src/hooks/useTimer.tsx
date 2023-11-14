@@ -2,9 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../state/store/store";
 import {
-    backgroundAC,
     countdownAC,
-    countIncrementAC, decrementLifeAC, playAC, roundAC,
+    countIncrementAC, decrementLifeAC, playAC, resetCountAC,
     startAC,
     startTimerAC,
     textAC
@@ -14,7 +13,7 @@ export const useTimer = () => {
     let bubble = useSelector<AppRootStateType, any>(state => state.bubble)
     const dispatch = useDispatch()
 
-    const [seconds, setSeconds] = useState(5)
+    const [seconds, setSeconds] = useState(15)
     const [milliseconds, setMilliseconds] = useState(0);
 
 
@@ -24,10 +23,9 @@ export const useTimer = () => {
         dispatch(countdownAC(bubble.countdown))
         dispatch(startAC(false))
         dispatch(startTimerAC(false))
-        dispatch(backgroundAC(true))
 
         //Имитация сохранения значения счетчика(на данный момент его обнуляю)
-        dispatch(countIncrementAC(0))
+        dispatch(resetCountAC())
     }
 
     const repeat = () => {
@@ -40,7 +38,6 @@ export const useTimer = () => {
     const nextRound = () => {
         play()
         dispatch(playAC('Start'))
-        dispatch(roundAC(bubble.round))
         dispatch(textAC('Round', bubble.round, bubble.count))
     }
 

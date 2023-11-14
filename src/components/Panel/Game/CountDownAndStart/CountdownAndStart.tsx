@@ -9,7 +9,8 @@ export const CountdownAndStart = () => {
         bubbleStart,
         bubbleCountdown,
         bubblePlay,
-        onClickStartHandler
+        onClickStartHandler,
+        bubbleStartTimer
     } = useCountdownAndStart()
 
     return (
@@ -17,10 +18,12 @@ export const CountdownAndStart = () => {
             <div className={styles.start}>
                 <div className={styles.bubbleText}>{bubbleText}</div>
                 {bubbleStart
-                    ? <div>{bubbleCountdown}</div>
-                    : <button className={styles.btnPlay} onClick={onClickStartHandler}>
-                        {bubblePlay}
-                    </button>}
+                    ? (<div>{bubbleCountdown}</div>)
+                    : (bubbleStartTimer
+                        ? null
+                        : <button className={styles.btnPlay} onClick={onClickStartHandler}>
+                            {bubblePlay}
+                        </button>)}
             </div>
         </>
     );

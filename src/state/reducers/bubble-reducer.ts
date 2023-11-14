@@ -1,16 +1,15 @@
 export type CountIncrementActionType = ReturnType<typeof countIncrementAC>
 export type PlayActionType = ReturnType<typeof playAC>
 export type DecrementLifeActionType = ReturnType<typeof decrementLifeAC>
-export type NextRoundActionType = ReturnType<typeof roundAC>
 export type RandomBubblePositionActionType = ReturnType<typeof randomBubblePositionAC>
 export type StartTimerActionType = ReturnType<typeof startTimerAC>
 export type CountdownActionType = ReturnType<typeof countdownAC>
 export type StartActionType = ReturnType<typeof startAC>
-export type BackgroundActionType = ReturnType<typeof backgroundAC>
 export type TextActionType = ReturnType<typeof textAC>
+export type ResetCountActionType = ReturnType<typeof resetCountAC>
 
 
-type ActionType = CountIncrementActionType | PlayActionType | DecrementLifeActionType | NextRoundActionType | RandomBubblePositionActionType | StartTimerActionType | CountdownActionType | StartActionType | BackgroundActionType | TextActionType
+type ActionType = CountIncrementActionType | PlayActionType | DecrementLifeActionType  | RandomBubblePositionActionType | StartTimerActionType | CountdownActionType | StartActionType | TextActionType | ResetCountActionType
 
 const initialState = {
     count: 0,
@@ -42,17 +41,15 @@ export const bubbleReducer = (state = initialState, action: ActionType) => {
             return {...state, start: action.start}
         }
 
-        case 'BACKGROUND' : {
-            return {...state, background: action.background}
-        }
-
         case 'COUNTDOWN': {
             return {...state, countdown: action.countdown === 0 ? 3 : action.countdown - 1}
         }
 
         case 'COUNT_INCREMENT': {
-
             return {...state, count: action.count + 1}
+        }
+        case 'RESET_COUNT': {
+            return {...state, count: 0}
         }
         case 'PLAY': {
             return {...state, play: action.play}
@@ -64,11 +61,7 @@ export const bubbleReducer = (state = initialState, action: ActionType) => {
 
         case 'TEXT': {
             // @ts-ignore
-            return {...state, text: action.count >= 10 ? action.text + action.round : action.text}
-        }
-
-        case 'ROUND': {
-            return {...state, round:  action.round + 1}
+            return {...state, text: action.count >= 10 ? `${action.text} ${action.round + 1 }`: action.text}
         }
 
         default:
@@ -90,12 +83,12 @@ export const startTimerAC = (timer: boolean) => {
 export const countdownAC = (countdown: number) => {
     return {type: 'COUNTDOWN', countdown} as const
 }
-export const backgroundAC = (background: boolean) => {
-    return {type: 'BACKGROUND', background} as const
-}
-
 export const startAC = (start: boolean) => {
     return {type: 'START', start} as const
+}
+
+export const resetCountAC = () => {
+    return {type: 'RESET_COUNT'} as const
 }
 
 export const countIncrementAC = (count: number) => {
@@ -107,6 +100,4 @@ export const playAC = (play: string) => {
 export const decrementLifeAC = (life: number) => {
     return {type: 'DECREMENT_LIFE', life} as const
 }
-export const roundAC = (round: number) => {
-    return {type: 'ROUND', round} as const
-}
+

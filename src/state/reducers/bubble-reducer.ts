@@ -7,9 +7,10 @@ export type CountdownActionType = ReturnType<typeof countdownAC>
 export type StartActionType = ReturnType<typeof startAC>
 export type TextActionType = ReturnType<typeof textAC>
 export type ResetCountActionType = ReturnType<typeof resetCountAC>
+export type NextRoundActionType = ReturnType<typeof nextRoundAC>
 
 
-type ActionType = CountIncrementActionType | PlayActionType | DecrementLifeActionType  | RandomBubblePositionActionType | StartTimerActionType | CountdownActionType | StartActionType | TextActionType | ResetCountActionType
+type ActionType = CountIncrementActionType | PlayActionType | DecrementLifeActionType  | RandomBubblePositionActionType | StartTimerActionType | CountdownActionType | StartActionType | TextActionType | ResetCountActionType | NextRoundActionType
 
 const initialState = {
     count: 0,
@@ -61,7 +62,11 @@ export const bubbleReducer = (state = initialState, action: ActionType) => {
 
         case 'TEXT': {
             // @ts-ignore
-            return {...state, text: action.count >= 10 ? `${action.text} ${action.round + 1 }`: action.text}
+            return {...state, text: action.count && action.count >= 10 ? `${action.text} ${action.round + 1}`: action.text}
+        }
+        case 'NEXT_ROUND': {
+
+            return {...state, round: action.round + 1}
         }
 
         default:
@@ -91,6 +96,8 @@ export const resetCountAC = () => {
     return {type: 'RESET_COUNT'} as const
 }
 
+
+
 export const countIncrementAC = (count: number) => {
     return {type: 'COUNT_INCREMENT', count} as const
 }
@@ -101,3 +108,6 @@ export const decrementLifeAC = (life: number) => {
     return {type: 'DECREMENT_LIFE', life} as const
 }
 
+export const nextRoundAC = (round: number) => {
+    return {type: 'NEXT_ROUND', round} as const
+}

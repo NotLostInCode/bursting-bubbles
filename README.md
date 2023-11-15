@@ -1,6 +1,14 @@
-# "Bubble Popping" App
+# "Bubble Popping" 
+[Demo](https://NotLostInCode.github.io/bursting-bubbles/)
 
-### The project is purely for the soul :)
-### Technology stack that I plan to use in the application: React, Redux.
+## Built With
+`React` `Redux` `TypeScript` `React Router`
 
-## I decided to abandon design for now, the emphasis will be on functionality. In the future I will also add an animation library.
+## Screenshots
+![screenshots](./screenshots/game.png)
+
+## Description
+The Bursting bubbles project - you are given a certain time during which you must burst 10 bubbles.
+
+## P.S
+The game is still in development

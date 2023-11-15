@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "./state/store/store";
 import {Bubble} from "./components/Panel/Game/Bubble/Bubble";
 import {Timer} from "./components/Panel/Game/Timer/Timer";
-import {CountdownAndStart} from "./components/Panel/Game/CountDownAndStart/CountdownAndStart";
+import {CountdownAndStart} from "./components/Panel/Game/CountdownAndStart/CountdownAndStart";
 import Panel from "./components/Panel/Panel";
 import {BrowserRouter, Route, Routes, useNavigate} from "react-router-dom";
 import {Game} from "./components/Panel/Game/Game";
@@ -33,8 +33,6 @@ export const App = () => {
                         <Route path={'/game'} element={<Game/>}/>
                         <Route path={'/settings'} element={<Settings/>}/>
                     </Routes>
-
-
 
                 <Panel/>
 

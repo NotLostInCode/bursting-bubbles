@@ -5,6 +5,7 @@
     flex: 1;
     border-radius: 10px;
     background: linear-gradient(225deg, #BEBBEE, #CBA69B);
+
 }
 .menuBubble {
     display: flex;
@@ -19,4 +20,11 @@
     text-align: center;
     font-size: 40px;
     border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .menuBubble div {
+        width: 100px;
+        font-size: 25px;
+    }
 }

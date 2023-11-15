@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../state/store/store";
 import {
     countdownAC,
-    countIncrementAC, decrementLifeAC, playAC, resetCountAC,
+    countIncrementAC, decrementLifeAC, nextRoundAC, playAC, resetCountAC,
     startAC,
     startTimerAC,
     textAC
@@ -38,6 +38,7 @@ export const useTimer = () => {
     const nextRound = () => {
         play()
         dispatch(playAC('Start'))
+        dispatch(nextRoundAC(bubble.round))
         dispatch(textAC('Round', bubble.round, bubble.count))
     }
 

@@ -31,7 +31,7 @@ export const Bubble = () => {
                 dispatch(countIncrementAC(bubble.count))
                 dispatch(randomBubblePositionAC(950, 700))
                 setPopped(false);
-            }, 500);
+            }, 100);
 
             return () => clearTimeout(timeoutId);
         }

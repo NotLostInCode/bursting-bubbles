@@ -1,14 +1,13 @@
 import React from 'react';
 import styles from './Profile.module.css'
 import avatar from '../../../assets/images/avatar.png'
+import {Avatar} from "./Avatar/Avatar";
 
 export const Profile = () => {
     return (
        <div className={styles.profile}>
            <div className={styles.profileData}>
-               <div className={styles.avatar}>
-                   <img src={avatar} alt=""/>
-               </div>
+            <Avatar />
                <div className={styles.name}>
                    <p>Anonymous</p>
                </div>

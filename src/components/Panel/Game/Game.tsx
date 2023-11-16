@@ -8,8 +8,8 @@ import {useSelector} from "react-redux";
 import {AppRootStateType} from "../../../state/store/store";
 
 export const Game = () => {
-
     let bubble = useSelector<AppRootStateType, any>(state => state.bubble)
+
 
     return (
         <>
@@ -19,7 +19,7 @@ export const Game = () => {
                 <div className={styles.count}>{bubble.count}</div>
             </div>
 
-            <div className={styles.burstingBubbles}>
+            <div className={styles.burstingBubbles}  >
                 <div>
                     <CountdownAndStart/>
                 </div>

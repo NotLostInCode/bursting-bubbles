@@ -1,40 +1,32 @@
 import React from 'react';
 import styles from './Profile.module.css'
 import avatar from '../../../assets/images/avatar.png'
-import {Avatar} from "./Avatar/Avatar";
+import settingProfile from '../../../assets/icons/settingProfile.svg'
+import {NavLink} from "react-router-dom";
+import {Statistics} from "../StatisticsProfile/Statistics";
 
 export const Profile = () => {
     return (
-       <div className={styles.profile}>
-           <div className={styles.profileData}>
-            <Avatar />
-               <div className={styles.name}>
-                   <p>Anonymous</p>
-               </div>
-           </div>
+        <div className={styles.profile}>
+            <div className={styles.profileData}>
 
-           <div className={styles.profileStatus}>
-               <div className={styles.statisticsHead}>Statistics</div>
+                <div className={styles.avatar}>
+                    <img src={avatar} alt=""/>
+                </div>
 
-              <div className={styles.statistics}>
-                  <div className={`${styles.totalRound} ${styles.inOneLine}`}>
-                      <p className={styles.statusName}>Completed rounds in a row</p>
-                      <p className={styles.statisticsStatus}>999</p>
-                  </div>
-                  <div className={`${styles.bestTime} ${styles.inOneLine}`}>
-                      <p className={styles.statusName}>Best time</p>
-                      <p className={styles.statisticsStatus}>20 seconds</p>
-                  </div>
-                  <div className={`${styles.totalBubbles} ${styles.inOneLine}`}>
-                      <p className={styles.statusName}>Total burst bubbles</p>
-                      <p className={styles.statisticsStatus}>999</p>
-                  </div>
-              </div>
-           </div>
+                <div className={styles.name}>
+                    <p>Anonymous</p>
+                </div>
 
-        {/*<div>*/}
-        {/*    <button>Log out</button>*/}
-        {/*</div>*/}
-       </div>
+                <div className={styles.settingProfile}>
+                    <NavLink to={'/setting-profile'}>
+                        <img src={settingProfile} alt=""/>
+                    </NavLink>
+                </div>
+            </div>
+
+            <Statistics/>
+
+        </div>
     );
 };
